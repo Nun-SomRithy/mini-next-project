@@ -1,5 +1,6 @@
 import CardComponent from "@/components/CardComponent";
 import CategoryComponent from "@/components/CategoryComponent";
+import {getData} from "@/app/datafetch/product";
 
 export const metadata = {
     title: 'Home ',
@@ -24,13 +25,8 @@ export const metadata = {
     },
 }
 
-
 //Product API
-export async function getData() {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products?limit=32&offset=0")
-    const data = await res.json();
-    return data;
-}
+
 
 
 //category API

@@ -3,7 +3,6 @@ import React from 'react';
 import UserComponent from "@/components/UserComponent";
 import {getUserDetail} from "@/app/userdetails/[id]/page";
 
-
 export async function getUserData() {
     const res = await fetch("https://api.escuelajs.co/api/v1/users?limit=9")
     const data = await res.json();
