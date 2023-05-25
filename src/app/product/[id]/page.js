@@ -9,7 +9,7 @@ async function getProductDetails(id) {
     const data = await res.json();
     return data;
 }
- async function generateMetadata({ params }) {
+ export async function generateMetadata({ params }) {
     const { id } = params;
     const product = await getProductDetails(id);
     return {

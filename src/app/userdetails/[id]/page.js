@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import UserDetailsComponent from "@/components/UserDetailsComponent";
 
@@ -8,7 +9,7 @@ export async function getUserDetail(id) {
     const datauser = await res.json();
     return datauser;
 }
- async function generateMetadata({ params }) {
+ export async function generateMetadata({ params }) {
     const { id } = params;
     const user = await getUserDetail(id);
     return {
