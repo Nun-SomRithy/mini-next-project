@@ -1,4 +1,4 @@
-"use client"
+
 import React from 'react';
 import CardComponent from "@/components/CardComponent";
 
@@ -23,9 +23,7 @@ export async function generateMetadata({ params }) {
             },
 
         },
-        openGraph: {
-            images: category.images[0],
-        },
+
     };
 }
 

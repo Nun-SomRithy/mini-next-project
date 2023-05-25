@@ -8,6 +8,26 @@ export async function getUserDetail(id) {
     const datauser = await res.json();
     return datauser;
 }
+ async function generateMetadata({ params }) {
+    const { id } = params;
+    const user = await getUserDetail(id);
+    return {
+        title: user.title,
+        description: user.description,
+        metadataBase: new URL("https://istad.co"),
+        alternates: {
+            canonical: "/", // canonical mean the original page
+            languages: {
+                "en-US": "/en-US",
+                "de-DE": "/de-DE",
+            },
+            openGraph: {
+                images: user.avatar,
+            },
+        },
+    };
+}
+
 
 async function getUser({params}) {
     const { id } = params;

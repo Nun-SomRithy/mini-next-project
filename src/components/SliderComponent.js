@@ -21,12 +21,12 @@ function SliderComponent(props) {
                 rightControl={false}
             >
 
-                <Image unoptimized className="object-cover h-full w-full"
-                    src="https://ps.w.org/bdthemes-prime-slider-lite/assets/banner-772x250.png?rev=2802047"
+                <Image unoptimized  width={500} height={500} className="object-cover h-full w-full"
+                    src="/slide1.jpg"
                     alt="..."
                 />
-                <Image unoptimized className="object-cover h-full w-full"
-                    src="https://www.elementpack.pro/wp-content/uploads/2019/10/Banner.jpg"
+                <Image unoptimized  width={500} height={500} className="object-cover h-full w-full"
+                    src="/slide2.jpg"
                     alt="..."
                 />
             </Carousel>

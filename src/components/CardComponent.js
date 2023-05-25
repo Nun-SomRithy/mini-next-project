@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 
 function CardComponent({id,title,image,price,category}) {
+    console.log(image)
     return (
 <>
     <div className="bg-white ">
@@ -9,8 +10,10 @@ function CardComponent({id,title,image,price,category}) {
                 <div className="group relative">
                     <div
                         className="aspect-h-3 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                        <a href={`/product/${id}`}> <Image unoptimized src={image? image:"https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"}
-                             alt="Front of men&#039;s Basic Tee in black."
+                        <a href={`/product/${id}`}>
+                            {/*<Image unoptimized  width={500} height={500} className="rounded-full w-10 h-10" src={image? image:"placeholder.png"} alt=" image"/>*/}
+                            <Image unoptimized  width={500} height={500} src={image? image:"/placeholder.png"}
+                             alt="No image"
                              className="h-full w-full object-cover object-center lg:h-96 lg:w-72"/>
                         </a>
                     </div>

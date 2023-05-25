@@ -9,7 +9,7 @@ async function getProductDetails(id) {
     const data = await res.json();
     return data;
 }
-export async function generateMetadata({ params }) {
+ async function generateMetadata({ params }) {
     const { id } = params;
     const product = await getProductDetails(id);
     return {
@@ -23,9 +23,7 @@ export async function generateMetadata({ params }) {
                 "de-DE": "/de-DE",
             },
         },
-        openGraph: {
-            images: product.images[0],
-        },
+
     };
 }
 
@@ -45,9 +43,9 @@ export default async function ProductDetails({ params }) {
                         className="flex  flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
                     >
                         {product.images && (
-                            <Image unoptimized
+                            <Image unoptimized   width={500} height={500}
                                 className="object-cover w-full rounded-t-lg h-96 md:h-auto  md:rounded-none md:rounded-l-lg"
-                                src={product.images}
+                                src={product.images[0]}
                                 alt=""
                             />
                         )}

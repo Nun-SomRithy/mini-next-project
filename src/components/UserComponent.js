@@ -10,7 +10,7 @@ export default function UserComponent({id, name, avatar, role}) {
             <div className="max-w-sm w-60">
                 <Card>
                     <div className="flex flex-col items-center ">
-                        <Image unoptimized
+                        <Image unoptimized  width={500} height={500}
                             className="mb-3 h-24 w-24 rounded-full shadow-lg"
                             src={avatar ? avatar : "https://flowbite.com/docs/images/people/profile-picture-3.jpg"}
                             alt="Bonnie image"

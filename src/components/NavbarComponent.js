@@ -18,8 +18,8 @@ function NavbarComponent() {
                 rounded={true}
             >
                 <Navbar.Brand href="/">
-                    <Image unoptimized
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Mozilla_dinosaur_head_logo.png"
+                    <Image unoptimized  width={60} height={300}
+                        src="/logo.png"
                         className="mr-5 h-6 md:h-9"
                         alt="Flowbite Logo"
                     />

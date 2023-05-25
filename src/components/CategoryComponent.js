@@ -28,7 +28,7 @@ function CategoryComponent({id,catename,cateimage}) {
                     <li>
                         <a href={`/categorys/${id}`}
                            className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                            <Image unoptimized className="rounded-full w-10 h-10" src={cateimage? cateimage:"placeholder.png"} alt=" image"/>
+                            <Image unoptimized  width={500} height={500} className="rounded-full w-10 h-10" src={cateimage? cateimage:"placeholder.png"} alt=" image"/>
                             <span className="flex-1 ml-3 whitespace-nowrap">{catename? catename:"unknown"}</span>
                         </a>
                     </li>

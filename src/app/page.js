@@ -43,7 +43,7 @@ export async function getCategoryList() {
 
 export default async function Home() {
 
-    const product = await getData();
+    const products = await getData();
     const categorys = await getCategoryList();
     return (
         <>
@@ -66,14 +66,14 @@ export default async function Home() {
             <div>
                 <h1 className="text-center font-bold  mt-10 text-2xl text-red-700 "> PRODUCT  </h1>
             <div className={"flex min-h-screen flex-wrap items-center justify-between container mx-auto "}>
-                {product.map((products) => (
+                {products.map((product) => (
                     <CardComponent
-                        key={products.id}
-                        id={products.id}
-                        title={products.title}
-                        image={products.images}
-                        price={products.price}
-                        category={products.category.name}
+                        key={product.id}
+                        id={product.id}
+                        title={product.title}
+                        image={product.images[0]}
+                        price={product.price}
+                        category={product.category.name}
 
                     />
                 ))}
