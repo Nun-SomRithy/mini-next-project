@@ -9,23 +9,23 @@ async function getProductDetails(id) {
     const data = await res.json();
     return data;
 }
- export async function generateMetadata({ params }) {
-    const { id } = params;
-    const product = await getProductDetails(id);
-    return {
-        title: product.title,
-        description: product.description,
-        metadataBase: new URL("https://istad.co"),
-        alternates: {
-            canonical: "/", // canonical mean the original page
-            languages: {
-                "en-US": "/en-US",
-                "de-DE": "/de-DE",
-            },
-        },
-
-    };
-}
+//  export async function generateMetadata({ params }) {
+//     const { id } = params;
+//     const product = await getProductDetails(id);
+//     return {
+//         title: product.title,
+//         description: product.description,
+//         metadataBase: new URL("https://istad.co"),
+//         alternates: {
+//             canonical: "/", // canonical mean the original page
+//             languages: {
+//                 "en-US": "/en-US",
+//                 "de-DE": "/de-DE",
+//             },
+//         },
+//
+//     };
+// }
 
 export default async function ProductDetails({ params }) {
 
