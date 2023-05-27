@@ -1,33 +1,12 @@
-"use client"
+
 import React from 'react';
 import UserDetailsComponent from "@/components/UserDetailsComponent";
+import {getUserDetail} from "@/app/datafetch/product";
 
 
 
-export async function getUserDetail(id) {
-    const res = await fetch(`https://api.escuelajs.co/api/v1/users/${id}`);
-    const datauser = await res.json();
-    return datauser;
-}
-//  export async function generateMetadata({ params }) {
-//     const { id } = params;
-//     const user = await getUserDetail(id);
-//     return {
-//         title: user.title,
-//         description: user.description,
-//         metadataBase: new URL("https://istad.co"),
-//         alternates: {
-//             canonical: "/", // canonical mean the original page
-//             languages: {
-//                 "en-US": "/en-US",
-//                 "de-DE": "/de-DE",
-//             },
-//             openGraph: {
-//                 images: user.avatar,
-//             },
-//         },
-//     };
-// }
+
+
 
 
 async function getUser({params}) {

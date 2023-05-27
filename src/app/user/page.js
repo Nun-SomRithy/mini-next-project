@@ -1,4 +1,4 @@
-"use client"
+
 import React from 'react';
 import UserComponent from "@/components/UserComponent";
 import {getUserDetail} from "@/app/userdetails/[id]/page";
@@ -9,29 +9,30 @@ export async function getUserData() {
     return data;
 }
 
+export const metadata = {
+    title: 'User',
+    description: "Our website is designed to provide you with comprehensive information about our exceptional product and its features.",
+    locale: 'en-US',
+    manifest: '/manifest.json',
+    type: 'website',
+    siteName: 'DinoShop',
+    category: 'product',
+    openGraph:{
+        title: 'User - DinoShop',
+        description: " Our website is designed to provide you with comprehensive information about our exceptional product and its features.",
+        url: '/',
+        siteName: 'DinoShop',
+        images: [
+            {
+                url: "/og-dino.jpg",
+                width: 700,
+                height: 500,
+            },
+        ]
+    },
+}
 
-// export async function generateMetadata({ params }) {
-//     const { id } = params;
-//     const user = await getUserDetail(id);
-//     return {
-//         title: user.title,
-//         description: user.description,
-//         metadataBase: new URL("https://istad.co"),
-//         alternates: {
-//             canonical: "/", // canonical mean the original page
-//             languages: {
-//                 "en-US": "/en-US",
-//                 "de-DE": "/de-DE",
-//             },
-//             openGraph: {
-//                 images: user.avatar,
-//             },
-//         },
-//         openGraph: {
-//             images: user.avatar,
-//         },
-//     };
-// }
+
 
 
 

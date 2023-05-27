@@ -20,3 +20,10 @@ export async function getUserData() {
     const data = await res.json();
     return data;
 }
+
+
+export async function getUserDetail(id) {
+    const res = await fetch(`https://api.escuelajs.co/api/v1/users/${id}`);
+    const datauser = await res.json();
+    return datauser;
+}

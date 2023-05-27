@@ -2,29 +2,35 @@
 import React from 'react';
 import CardComponent from "@/components/CardComponent";
 
+export const metadata = {
+    title: 'Category',
+    description: "Our website is designed to provide you with comprehensive information about our exceptional product and its features.",
+    locale: 'en-US',
+    manifest: '/manifest.json',
+    type: 'website',
+    siteName: 'DinoShop',
+    category: 'product',
+    openGraph:{
+        title: 'Category - DinoShop',
+        description: " Our website is designed to provide you with comprehensive information about our exceptional product and its features.",
+        url: '/',
+        siteName: 'DinoShop',
+        images: [
+            {
+                url: "/og-dino.jpg",
+                width: 700,
+                height: 500,
+            },
+        ]
+    },
+}
+
+
 export async function getCategoryDetail(id,name) {
     const res = await fetch(`https://api.escuelajs.co/api/v1/categories/${id}/products?limit=25&offset=0
 `);
     const data = await res.json();
     return data;
-}
-export async function generateMetadata({ params }) {
-    const { id } = params;
-    const category = await getCategoryDetail(id);
-    return {
-        title: category.title,
-        description: category.description,
-        metadataBase: new URL("https://istad.co"),
-        alternates: {
-            canonical: "/", // canonical mean the original page
-            languages: {
-                "en-US": "/en-US",
-                "de-DE": "/de-DE",
-            },
-
-        },
-
-    };
 }
 
 async function Page({ params }) {
